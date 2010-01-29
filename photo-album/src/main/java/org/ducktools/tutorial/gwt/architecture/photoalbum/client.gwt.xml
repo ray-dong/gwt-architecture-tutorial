@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.0.0//EN"
+"http://google-web-toolkit.googlecode.com/svn/tags/2.0.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="client">
+
+  <inherits name="com.google.gwt.user.theme.dark.Dark" />
+  <inherits name="com.google.gwt.inject.Inject" />
+  
+  <inherits name="org.ducktools.tutorial.gwt.architecture.photoalbum.ui" />
+
+  <source path="client" />
+
+  <entry-point
+    class="org.ducktools.tutorial.gwt.architecture.photoalbum.client.ApplicationEntryPoint" />
+
+</module>
