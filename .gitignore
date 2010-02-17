@@ -1,9 +1,10 @@
-*src/main/webapp/META-INF/*
-*src/main/webapp/client/*
-*war/client/*
-*lib/*
-*classes/*
-*target/*
-*.settings/*
+*src/main/webapp/META-INF*
+*src/main/webapp/client*
+*war/client*
+*lib*
+*classes*
+*target*
+*.settings*
 *.classpath
 *.project
+/target
