@@ -1,2 +1,15 @@
-This project will become a tutorial about GWT.
-At this early state, there is no guide on how to set up.
+This project contains the source code for a tutorial about advanced RIA architectures done with GWT.
+The tutorial can be found on "derjanandhisblog":http://derjanandhisblog.blogspot.com.
+
+h3. Build of this project:
+
+p. First you will have to install "Git":http://git-scm.com/, "Maven2":http://maven.apache.org/ and "Java":http://java.sun.com/.
+Everything else like "GWT":http://code.google.com/webtoolkit/ will be installed through Maven.
+
+p. You can get the source code and run the build with:
+@git clone git://github.com/derjan1982/gwt-architecture-tutorial.git gwt-architecture-tutorial@
+@cd gwt-architecture-tutorial@
+@mvn install@
+This will build the "GWT":http://code.google.com/webtoolkit/ code and package everything as a WAR file. The WAR can be deployed
+to a Java EE Application Server or a plain "Tomcat":http://tomcat.apache.org/ servlet container.
+
