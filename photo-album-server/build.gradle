@@ -1,0 +1,57 @@
+/**
+ * © 2010 Jan Ehrhardt
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+usePlugin "war"
+
+task gwtClean(type: Clean) {
+  ant.delete(dir: "${webAppDirName}/client")
+}
+ 
+task gwtCompile << {
+
+  ant.java(classname: "com.google.gwt.dev.Compiler", failOnError: true, fork: true) {
+	
+    jvmarg(value: "-Xmx512M")
+    arg(line: "-war ${webAppDirName}")
+    arg(value: "org.ducktools.tutorial.gwt.architecture.photoalbum.client")
+
+    classpath {
+      pathElement(path: configurations.gwt.asPath)
+    }
+
+  }
+
+}
+ 
+configurations {
+  gwt
+}
+ 
+dependencies {
+
+  // include GWT sdk
+  gwt fileTree(dir: gwtHome, includes: ["**/*.jar"])
+
+  gwt group: "com.googlecode.gwt.inject", name: "gin", version: "1.0", transitive: false
+
+  gwt group: "com.google.inject", name: "guice", version: "2.0"
+  gwt group: "aopalliance", name: "aopalliance", version: "1.0"
+
+  gwt project(":photo-album-client")
+  gwt project(":photo-album-ui")
+
+}
+
+war.dependsOn gwtCompile
