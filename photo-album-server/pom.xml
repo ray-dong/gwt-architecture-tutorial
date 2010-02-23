@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>photo-album-project</artifactId>
+    <groupId>org.ducktools.tutorial.gwt.architecture</groupId>
+    <version>0.1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>org.ducktools.tutorial.gwt.architecture</groupId>
+  <artifactId>photo-album-server</artifactId>
+  <packaging>war</packaging>
+  <version>${photo-album.version}</version>
+  <name>photo-album-server</name>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>photo-album-client</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <configuration>
+          <downloadSources>true</downloadSources>
+          <wtpversion>2.0</wtpversion>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${basedir}/src/main/webapp/client</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <configuration>
+          <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+          <module>org.ducktools.tutorial.gwt.architecture.photoalbum.client</module>
+          <disableCastChecking>true</disableCastChecking>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+    <finalName>photo-album-${project.version}</finalName>
+
+  </build>
+
+</project>
