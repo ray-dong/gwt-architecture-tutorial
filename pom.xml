@@ -19,7 +19,7 @@
   <properties>
 
     <photo-album.version>0.1.0-SNAPSHOT</photo-album.version>
-    
+
     <servlet-api.version>2.5</servlet-api.version>
     <jsp.version>2.1</jsp.version>
 
@@ -110,18 +110,12 @@
           <artifactId>gwt-maven-plugin</artifactId>
           <version>1.2</version>
         </plugin>
-        
+
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-eclipse-plugin</artifactId>
-          <version>2.7</version>
-        </plugin>
-
-	    <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-	      <artifactId>maven-clean-plugin</artifactId>
+          <artifactId>maven-clean-plugin</artifactId>
           <version>2.4</version>
-	    </plugin>
+        </plugin>
 
       </plugins>
 
