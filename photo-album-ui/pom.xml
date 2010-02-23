@@ -12,11 +12,15 @@
 
   <groupId>org.ducktools.tutorial.gwt.architecture</groupId>
   <artifactId>photo-album-ui</artifactId>
-  <packaging>jar</packaging>
   <version>${photo-album.version}</version>
   <name>photo-album-ui</name>
 
   <dependencies>
+
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>photo-album-client-commons</artifactId>
+    </dependency>
 
     <dependency>
       <groupId>com.google.gwt</groupId>

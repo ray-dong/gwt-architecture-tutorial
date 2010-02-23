@@ -14,6 +14,7 @@
     <module>photo-album-server</module>
     <module>photo-album-client</module>
     <module>photo-album-ui</module>
+    <module>photo-album-client-commons</module>
   </modules>
 
   <properties>
@@ -40,6 +41,12 @@
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>photo-album-ui</artifactId>
+        <version>${photo-album.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>photo-album-client-commons</artifactId>
         <version>${photo-album.version}</version>
       </dependency>
 

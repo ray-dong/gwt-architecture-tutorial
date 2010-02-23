@@ -28,11 +28,13 @@ import com.google.inject.Inject;
 public class ApplicationPresenterImpl extends
     AbstractPresenter<ApplicationDisplay> implements ApplicationPresenter {
 
-  private ListPresenter listPresenter;
+  private final ListPresenter listPresenter;
 
   @Inject
-  public ApplicationPresenterImpl(ApplicationDisplay display) {
+  public ApplicationPresenterImpl(ApplicationDisplay display,
+      ListPresenter listPresenter) {
     super(display);
+    this.listPresenter = listPresenter;
   }
 
   /**
@@ -42,15 +44,6 @@ public class ApplicationPresenterImpl extends
   public void init() {
     listPresenter.init();
     listPresenter.getDisplay().bindTo(display);
-  }
-
-  /**
-   * @param listPresenter
-   *          the listPresenter to set
-   */
-  @Inject
-  public void setListPresenter(ListPresenter listPresenter) {
-    this.listPresenter = listPresenter;
   }
 
 }
