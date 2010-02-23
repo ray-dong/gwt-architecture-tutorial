@@ -15,8 +15,8 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.client;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.EventBus;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.impl.EventBusImpl;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.EventBus;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl.EventBusImpl;
 
 import com.google.gwt.inject.client.AbstractGinModule;
 

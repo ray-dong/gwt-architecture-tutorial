@@ -15,7 +15,7 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.impl;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.EventBus;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.EventBus;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.ApplicationDisplay;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.ApplicationPresenter;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.common.AbstractPresenter;

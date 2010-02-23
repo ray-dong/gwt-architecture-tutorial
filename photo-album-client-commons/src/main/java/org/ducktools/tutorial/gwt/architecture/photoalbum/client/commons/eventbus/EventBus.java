@@ -13,42 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.impl;
-
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.EventBus;
+package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus;
 
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.inject.Singleton;
 
 /**
  * @author Jan Ehrhardt
  */
-@Singleton
-public class EventBusImpl implements EventBus {
+public interface EventBus {
 
-  private final HandlerManager handlerManager;
+  <H extends EventHandler> HandlerRegistration addHandler(Type<H> type,
+      H handler);
 
-  public EventBusImpl() {
-    handlerManager = new HandlerManager(null);
-  }
-
-  /**
-   * @see EventBus#addHandler(Type, EventHandler)
-   */
-  public <H extends EventHandler> HandlerRegistration addHandler(Type<H> type,
-      H handler) {
-    return handlerManager.addHandler(type, handler);
-  }
-
-  /**
-   * @see EventBus#fireEvent(GwtEvent)
-   */
-  public void fireEvent(GwtEvent<?> event) {
-    handlerManager.fireEvent(event);
-  }
+  void fireEvent(GwtEvent<?> event);
 
 }
