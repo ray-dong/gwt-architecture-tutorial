@@ -24,8 +24,6 @@
     <jsp.version>2.1</jsp.version>
 
     <gwt.version>2.0.2</gwt.version>
-    <gin.version>1.0</gin.version>
-    <guice.version>2.0</guice.version>
 
   </properties>
 
@@ -66,13 +64,13 @@
       <dependency>
         <groupId>com.google.gwt.inject</groupId>
         <artifactId>gin</artifactId>
-        <version>${gin.version}</version>
+        <version>1.0</version>
       </dependency>
 
       <dependency>
         <groupId>com.google.inject</groupId>
         <artifactId>guice</artifactId>
-        <version>${guice.version}</version>
+        <version>2.0</version>
       </dependency>
 
     </dependencies>
