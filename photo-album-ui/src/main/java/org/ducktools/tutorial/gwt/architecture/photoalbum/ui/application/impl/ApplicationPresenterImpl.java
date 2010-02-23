@@ -15,6 +15,7 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.impl;
 
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.EventBus;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.ApplicationDisplay;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.ApplicationPresenter;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.common.AbstractPresenter;
@@ -30,11 +31,17 @@ public class ApplicationPresenterImpl extends
 
   private final ListPresenter listPresenter;
 
+  private final EventBus eventBus;
+
   @Inject
   public ApplicationPresenterImpl(ApplicationDisplay display,
-      ListPresenter listPresenter) {
+      ListPresenter listPresenter, EventBus eventBus) {
+
     super(display);
+
     this.listPresenter = listPresenter;
+    this.eventBus = eventBus;
+
   }
 
   /**

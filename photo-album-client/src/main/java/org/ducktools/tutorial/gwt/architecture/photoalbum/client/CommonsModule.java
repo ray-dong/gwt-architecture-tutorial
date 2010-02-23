@@ -13,39 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl;
+package org.ducktools.tutorial.gwt.architecture.photoalbum.client;
 
 import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.EventBus;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.common.AbstractPresenter;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListDisplay;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListPresenter;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.events.impl.EventBusImpl;
 
-import com.google.inject.Inject;
+import com.google.gwt.inject.client.AbstractGinModule;
 
 /**
  * @author Jan Ehrhardt
  */
-public class ListPresenterImpl extends AbstractPresenter<ListDisplay> implements
-    ListPresenter {
-
-  private final EventBus eventBus;
+public class CommonsModule extends AbstractGinModule {
 
   /**
-   * 
-   * @param display
-   */
-  @Inject
-  public ListPresenterImpl(ListDisplay display, EventBus eventBus) {
-    super(display);
-    this.eventBus = eventBus;
-  }
-
-  /**
-   * @see ListPresenter#init()
+   * @see com.google.gwt.inject.client.AbstractGinModule#configure()
    */
   @Override
-  public void init() {
-
+  protected void configure() {
+    bind(EventBus.class).to(EventBusImpl.class);
   }
 
 }
