@@ -15,8 +15,6 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.client;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.ApplicationPresenter;
-
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -29,18 +27,13 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class ApplicationEntryPoint implements EntryPoint {
 
-  private static final Application application = GWT.create(Application.class);
-
   /**
    * @see com.google.gwt.core.client.EntryPoint#onModuleLoad()
    */
   @Override
   public void onModuleLoad() {
-    
-    ApplicationPresenter applicationPresenter = application.init();
-    applicationPresenter.init();
-    applicationPresenter.getDisplay().bindTo(RootPanel.get());
-    
+    Application application = GWT.create(Application.class);
+    application.start().getDisplay().bindTo(RootPanel.get());
   }
 
 }

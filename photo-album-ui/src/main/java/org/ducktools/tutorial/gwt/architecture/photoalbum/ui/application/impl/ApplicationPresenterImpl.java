@@ -29,27 +29,20 @@ import com.google.inject.Inject;
 public class ApplicationPresenterImpl extends
     AbstractPresenter<ApplicationDisplay> implements ApplicationPresenter {
 
-  private final ListPresenter listPresenter;
-
   private final EventBus eventBus;
 
   @Inject
-  public ApplicationPresenterImpl(ApplicationDisplay display,
-      ListPresenter listPresenter, EventBus eventBus) {
-
+  public ApplicationPresenterImpl(ApplicationDisplay display, EventBus eventBus) {
     super(display);
-
-    this.listPresenter = listPresenter;
     this.eventBus = eventBus;
-
   }
 
   /**
-   * @see ApplicationPresenter#init()
+   * 
+   * @param listPresenter
    */
-  @Override
-  public void init() {
-    listPresenter.init();
+  @Inject
+  public void setListPresenter(ListPresenter listPresenter) {
     listPresenter.getDisplay().bindTo(display);
   }
 

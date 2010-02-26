@@ -26,9 +26,4 @@ public interface Presenter<T extends Display<?>> {
    */
   T getDisplay();
 
-  /**
-   * 
-   */
-  void init();
-
 }

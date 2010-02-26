@@ -40,12 +40,4 @@ public class ListPresenterImpl extends AbstractPresenter<ListDisplay> implements
     this.eventBus = eventBus;
   }
 
-  /**
-   * @see ListPresenter#init()
-   */
-  @Override
-  public void init() {
-
-  }
-
 }

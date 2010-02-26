@@ -28,6 +28,6 @@ import com.google.gwt.inject.client.Ginjector;
 @GinModules( { UIModule.class, CommonsModule.class })
 public interface Application extends Ginjector {
 
-  ApplicationPresenter init();
+  ApplicationPresenter start();
 
 }
