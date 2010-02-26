@@ -20,8 +20,10 @@ import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.Applica
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.impl.ApplicationDisplayImpl;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application.impl.ApplicationPresenterImpl;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListDisplay;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListItemDisplay;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListPresenter;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl.ListDisplayImpl;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl.ListItemDisplayImpl;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl.ListPresenterImpl;
 
 import com.google.gwt.inject.client.AbstractGinModule;
@@ -46,6 +48,7 @@ public class UIModule extends AbstractGinModule {
 
     bind(ListPresenter.class).to(ListPresenterImpl.class);
     bind(ListDisplay.class).to(ListDisplayImpl.class);
+    bind(ListItemDisplay.class).to(ListItemDisplayImpl.class);
 
   }
 

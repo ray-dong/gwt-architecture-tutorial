@@ -15,38 +15,31 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.EventBus;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.common.AbstractPresenter;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListDisplay;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListItemDisplay;
-import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListPresenter;
 
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
-import com.google.inject.Provider;
 
 /**
  * @author Jan Ehrhardt
  */
-public class ListPresenterImpl extends AbstractPresenter<ListDisplay> implements
-    ListPresenter {
+public class ListItemDisplayImpl extends Composite implements ListItemDisplay {
 
-  private final EventBus eventBus;
+  public interface ListItemDisplayImplUiBinder extends
+      UiBinder<Widget, ListItemDisplayImpl> {
+  }
 
-  private final Provider<ListItemDisplay> listItemProvider;
-
-  /**
-   * 
-   * @param display
-   */
   @Inject
-  public ListPresenterImpl(ListDisplay display, EventBus eventBus,
-      Provider<ListItemDisplay> listItemProvider) {
+  public ListItemDisplayImpl(ListItemDisplayImplUiBinder uiBinder) {
+    initWidget(uiBinder.createAndBindUi(this));
+  }
 
-    super(display);
-
-    this.eventBus = eventBus;
-    this.listItemProvider = listItemProvider;
-
+  @Override
+  public void bindTo(HasWidgets parent) {
+    parent.add(this);
   }
 
 }

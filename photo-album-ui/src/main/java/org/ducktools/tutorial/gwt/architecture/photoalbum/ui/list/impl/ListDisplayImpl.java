@@ -28,7 +28,8 @@ import com.google.inject.Inject;
  */
 public class ListDisplayImpl extends Composite implements ListDisplay {
 
-  public interface ListDisplayImplUiBinder extends UiBinder<Widget, ListDisplayImpl> {
+  public interface ListDisplayImplUiBinder extends
+      UiBinder<Widget, ListDisplayImpl> {
 
   }
 
