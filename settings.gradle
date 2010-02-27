@@ -1,0 +1,3 @@
+include "photo-album-server"
+
+include "photo-album-client", "photo-album-client-commons", "photo-album-ui"

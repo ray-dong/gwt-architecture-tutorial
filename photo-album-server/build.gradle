@@ -1,0 +1,35 @@
+usePlugin "war"
+
+configurations { gwt }
+
+dependencies {
+  
+  gwt fileTree(dir: gwtHome, includes: ["**/*.jar"])
+  gwt group: "com.googlecode.gwt.inject", name: "gin", version: "1.0"
+  
+  compile project(":photo-album-client")
+  compile project(":photo-album-ui")
+  compile project(":photo-album-client-commons")
+  
+}
+
+task gwtClean(type: Clean) { ant.delete(dir: "${webAppDirName}/client") }
+
+task gwtCompile << {
+
+  ant.java(classname: "com.google.gwt.dev.Compiler", failOnError: true, fork: true) {
+
+    jvmarg(value: "-Xmx512M")
+    arg(line: "-war ${webAppDirName}")
+    arg(value: "org.ducktools.tutorial.gwt.architecture.photoalbum.client")
+
+    classpath {
+      pathElement(path: configurations.compile.asPath)
+      pathElement(path: configurations.gwt.asPath)
+    }
+
+  }
+
+}
+
+war.dependsOn gwtCompile
