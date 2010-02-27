@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="photo-album-ui-tests">
+
+  <test name="list tests">
+
+    <packages>
+      <package name="org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list"></package>
+    </packages>
+
+  </test>
+
+</suite>
