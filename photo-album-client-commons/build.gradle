@@ -1,8 +1,0 @@
-usePlugin "java"
-
-dependencies {
-  compile files("${gwtHome}/gwt-user.jar")
-  compile group: "com.google.inject", name: "guice", version: "2.0"
-}
-
-jar { from sourceSets.main.java }
