@@ -17,11 +17,19 @@ package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.application;
 
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.common.Display;
 
+import com.google.gwt.event.logical.shared.HasValueChangeHandlers;
 import com.google.gwt.user.client.ui.HasWidgets;
 
 /**
  * @author Jan Ehrhardt
  */
-public interface ApplicationDisplay extends Display<HasWidgets>, HasWidgets {
+public interface ApplicationDisplay extends Display<HasWidgets>, HasWidgets,
+    HasValueChangeHandlers<String> {
+
+  void setHistoryToken(String token);
+
+  void setTitle(String title);
+
+  String getTitle();
 
 }
