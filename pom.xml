@@ -129,11 +129,17 @@
         <classifier>jdk15</classifier>
         <version>5.11</version>
       </dependency>
-      
+
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.7</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.gmock</groupId>
+        <artifactId>gmock</artifactId>
+        <version>0.8.0</version>
       </dependency>
 
     </dependencies>
