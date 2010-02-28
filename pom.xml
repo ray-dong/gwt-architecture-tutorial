@@ -141,6 +141,12 @@
         <artifactId>gmock</artifactId>
         <version>0.8.0</version>
       </dependency>
+      
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-all</artifactId>
+        <version>1.1</version>
+      </dependency>
 
     </dependencies>
 
