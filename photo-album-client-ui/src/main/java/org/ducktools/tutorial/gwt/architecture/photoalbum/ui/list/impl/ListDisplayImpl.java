@@ -16,10 +16,13 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.impl;
 
+import java.util.Iterator;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.ui.list.ListDisplay;
 import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
@@ -32,6 +35,9 @@ public class ListDisplayImpl extends Composite implements ListDisplay {
 
   }
 
+  @UiField
+  VerticalPanel listPanel;
+
   @Inject
   public ListDisplayImpl(ListDisplayImplUiBinder uiBinder) {
     initWidget( uiBinder.createAndBindUi( this ) );
@@ -40,6 +46,26 @@ public class ListDisplayImpl extends Composite implements ListDisplay {
   @Override
   public void bindTo(HasWidgets parent) {
     parent.add( this );
+  }
+
+  @Override
+  public void add(Widget w) {
+    listPanel.add( w );
+  }
+
+  @Override
+  public void clear() {
+    listPanel.clear();
+  }
+
+  @Override
+  public Iterator<Widget> iterator() {
+    return listPanel.iterator();
+  }
+
+  @Override
+  public boolean remove(Widget w) {
+    return listPanel.remove( w );
   }
 
 }

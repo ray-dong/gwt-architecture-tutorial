@@ -14,22 +14,33 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus;
+package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.actions;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl.EventRelatedResult;
-import com.google.gwt.event.shared.EventHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.gwt.user.client.rpc.AsyncCallback;
+import java.util.List;
+import net.customware.gwt.dispatch.shared.Result;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.domain.Album;
 
 /**
  * @author Jan Ehrhardt
  */
-public interface EventBus extends AsyncCallback<EventRelatedResult> {
+public class LoadAlbumListActionResult implements Result {
 
-  <H extends EventHandler> HandlerRegistration addHandler(Type<H> type, H handler);
+  private static final long serialVersionUID = 7549270720831479322L;
 
-  void fireEvent(GwtEvent<?> event);
+  private List<Album> albumList;
+
+  /**
+   * @return
+   */
+  public List<Album> getAlbumList() {
+    return albumList;
+  }
+
+  /**
+   * @param albumList
+   */
+  public void setAlbumList(List<Album> albumList) {
+    this.albumList = albumList;
+  }
 
 }

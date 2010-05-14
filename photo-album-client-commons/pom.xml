@@ -27,6 +27,11 @@
       <artifactId>guice</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>net.customware.gwt.dispatch</groupId>
+      <artifactId>gwt-dispatch</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>

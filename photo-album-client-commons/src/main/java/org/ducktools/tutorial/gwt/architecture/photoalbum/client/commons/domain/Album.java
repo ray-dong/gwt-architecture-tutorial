@@ -14,22 +14,43 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus;
-
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl.EventRelatedResult;
-import com.google.gwt.event.shared.EventHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.gwt.user.client.rpc.AsyncCallback;
+package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.domain;
 
 /**
  * @author Jan Ehrhardt
  */
-public interface EventBus extends AsyncCallback<EventRelatedResult> {
+public class Album {
 
-  <H extends EventHandler> HandlerRegistration addHandler(Type<H> type, H handler);
+  private String name;
 
-  void fireEvent(GwtEvent<?> event);
+  private boolean fullyLoaded;
+
+  /**
+   * @return the name
+   */
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * @param name the name to set
+   */
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  /**
+   * @return the fullyLoaded
+   */
+  public boolean isFullyLoaded() {
+    return fullyLoaded;
+  }
+
+  /**
+   * @param fullyLoaded the fullyLoaded to set
+   */
+  public void setFullyLoaded(boolean fullyLoaded) {
+    this.fullyLoaded = fullyLoaded;
+  }
 
 }

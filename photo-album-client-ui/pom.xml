@@ -33,6 +33,11 @@
     </dependency>
 
     <dependency>
+      <groupId>net.customware.gwt.dispatch</groupId>
+      <artifactId>gwt-dispatch</artifactId>
+    </dependency>
+
+    <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <classifier>jdk15</classifier>

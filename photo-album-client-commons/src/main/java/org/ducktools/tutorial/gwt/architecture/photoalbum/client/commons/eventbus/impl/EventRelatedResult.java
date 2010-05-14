@@ -14,22 +14,20 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus;
+package org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl;
 
-import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl.EventRelatedResult;
+import net.customware.gwt.dispatch.shared.Result;
 import com.google.gwt.event.shared.EventHandler;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.GwtEvent.Type;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**
  * @author Jan Ehrhardt
  */
-public interface EventBus extends AsyncCallback<EventRelatedResult> {
+public interface EventRelatedResult extends Result {
 
-  <H extends EventHandler> HandlerRegistration addHandler(Type<H> type, H handler);
-
-  void fireEvent(GwtEvent<?> event);
+  /**
+   * @return
+   */
+  Type<? extends EventHandler> getEventType();
 
 }

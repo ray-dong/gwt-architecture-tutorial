@@ -3,8 +3,11 @@
 "http://google-web-toolkit.googlecode.com/svn/tags/2.0.0/distro-source/core/src/gwt-module.dtd">
 <module>
 
-  <inherits name='com.google.gwt.user.User' />
+  <inherits name="com.google.gwt.user.User" />
+  <inherits name="net.customware.gwt.dispatch.Dispatch" />
 
-  <source path='ui' />
+  <inherits name="org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons" />
+
+  <source path="ui" />
 
 </module>

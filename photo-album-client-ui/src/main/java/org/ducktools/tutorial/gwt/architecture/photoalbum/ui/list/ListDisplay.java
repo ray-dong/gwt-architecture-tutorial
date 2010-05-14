@@ -22,6 +22,6 @@ import com.google.gwt.user.client.ui.HasWidgets;
 /**
  * @author Jan Ehrhardt
  */
-public interface ListDisplay extends Display<HasWidgets> {
+public interface ListDisplay extends Display<HasWidgets>, HasWidgets {
 
 }

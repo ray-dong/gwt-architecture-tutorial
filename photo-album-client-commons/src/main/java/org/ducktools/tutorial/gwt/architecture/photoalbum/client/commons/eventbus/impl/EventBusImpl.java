@@ -50,4 +50,14 @@ public class EventBusImpl implements EventBus {
     handlerManager.fireEvent( event );
   }
 
+  @Override
+  public void onSuccess(EventRelatedResult result) {
+    // TODO: create event based on the type and fire it
+  }
+
+  @Override
+  public void onFailure(Throwable caught) {
+    // TODO: fire error event
+  }
+
 }

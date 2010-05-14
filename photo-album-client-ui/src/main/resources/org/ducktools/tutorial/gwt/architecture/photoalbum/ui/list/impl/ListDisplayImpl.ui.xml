@@ -19,6 +19,6 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
   xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-  <g:Label>Hello Photo App!</g:Label>
+  <g:VerticalPanel ui:field="listPanel" />
 
 </ui:UiBinder>

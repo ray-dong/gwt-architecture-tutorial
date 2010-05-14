@@ -16,9 +16,12 @@
  */
 package org.ducktools.tutorial.gwt.architecture.photoalbum.client;
 
+import net.customware.gwt.dispatch.client.DispatchAsync;
+import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.dispatcher.AlbumListDispatchAsync;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.EventBus;
 import org.ducktools.tutorial.gwt.architecture.photoalbum.client.commons.eventbus.impl.EventBusImpl;
 import com.google.gwt.inject.client.AbstractGinModule;
+import com.google.inject.name.Names;
 
 /**
  * @author Jan Ehrhardt
@@ -31,6 +34,7 @@ public class CommonsModule extends AbstractGinModule {
   @Override
   protected void configure() {
     bind( EventBus.class ).to( EventBusImpl.class );
+    bind( DispatchAsync.class ).annotatedWith( Names.named( "album-list" ) ).to( AlbumListDispatchAsync.class );
   }
 
 }

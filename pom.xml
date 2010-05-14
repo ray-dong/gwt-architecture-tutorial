@@ -74,6 +74,12 @@
       </dependency>
 
       <dependency>
+        <groupId>net.customware.gwt.dispatch</groupId>
+        <artifactId>gwt-dispatch</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+      <dependency>
         <groupId>org.testng</groupId>
         <artifactId>testng</artifactId>
         <classifier>jdk15</classifier>
