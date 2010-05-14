@@ -5,20 +5,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.ducktools.tutorial.gwt.architecture</groupId>
-  <artifactId>photo-album-project</artifactId>
+  <artifactId>photo-album</artifactId>
   <packaging>pom</packaging>
-  <name>photo-album-project</name>
+  <name>photo-album</name>
   <version>0.1.0-SNAPSHOT</version>
 
-  <modules>
-    <module>photo-album-server</module>
-    <module>photo-album-client</module>
-    <module>photo-album-ui</module>
-    <module>photo-album-client-commons</module>
-  </modules>
-
   <properties>
-    <photo-album.version>0.1.0-SNAPSHOT</photo-album.version>
     <slf4j.version>1.5.11</slf4j.version>
     <gwt.version>2.0.2</gwt.version>
   </properties>
@@ -29,20 +21,20 @@
 
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>photo-album-client</artifactId>
-        <version>${photo-album.version}</version>
+        <artifactId>photo-album-client-app</artifactId>
+        <version>${project.version}</version>
       </dependency>
 
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>photo-album-ui</artifactId>
-        <version>${photo-album.version}</version>
+        <artifactId>photo-album-client-ui</artifactId>
+        <version>${project.version}</version>
       </dependency>
 
       <dependency>
         <groupId>${project.groupId}</groupId>
         <artifactId>photo-album-client-commons</artifactId>
-        <version>${photo-album.version}</version>
+        <version>${project.version}</version>
       </dependency>
 
       <dependency>
@@ -141,7 +133,7 @@
         <artifactId>gmock</artifactId>
         <version>0.8.0</version>
       </dependency>
-      
+
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-all</artifactId>
@@ -201,5 +193,12 @@
     </pluginManagement>
 
   </build>
+
+  <modules>
+    <module>photo-album-server-app</module>
+    <module>photo-album-client-app</module>
+    <module>photo-album-client-ui</module>
+    <module>photo-album-client-commons</module>
+  </modules>
 
 </project>
